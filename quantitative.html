@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantitative Aptitude</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #fce205, #0096FF, #000000);
+            color: #fff;
+        }
+
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            font-size: 2rem;
+            color: #fce205;
+        }
+
+        .container {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .topic {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .topic:hover {
+            transform: scale(1.05);
+            background: #0096FF;
+        }
+
+        .topic h2 {
+            margin: 0 0 10px 0;
+            color: #fce205;
+        }
+
+        .topic p {
+            margin: 0;
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>Quantitative Aptitude</header>
+    <div class="container">
+        <div class="topic" onclick="openModule('percentages.html')">
+            <h2>Percentages</h2>
+            <p>Understand how percentages work with real-world examples and 50+ solved problems.</p>
+        </div>
+
+        <div class="topic" onclick="openModule('profit-loss.html')">
+            <h2>Profit & Loss</h2>
+            <p>Master profit, loss, and discount calculations essential for business scenarios.</p>
+        </div>
+
+        <div class="topic" onclick="openModule('speed-distance.html')">
+            <h2>Time, Speed & Distance</h2>
+            <p>Learn shortcuts and concepts to solve speed-distance problems efficiently.</p>
+        </div>
+
+        <div class="topic" onclick="openModule('interest.html')">
+            <h2>Interest Calculations</h2>
+            <p>Calculate simple and compound interest easily using tried-and-tested methods.</p>
+        </div>
+    </div>
+
+    <script src="quantitative.js"></script>
+</body>
+</html>

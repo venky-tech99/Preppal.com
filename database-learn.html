@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Database - Learn</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, orange, white, skyblue);
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+    header {
+        background-color: #005f99;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+    }
+    main {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+    h2 {
+        color: #d35400;
+        border-bottom: 2px solid #005f99;
+        padding-bottom: 5px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .example {
+        background: #f9f9f9;
+        padding: 10px;
+        border-left: 5px solid #005f99;
+        margin: 10px 0;
+        font-family: monospace;
+    }
+    .youtube-link {
+        display: block;
+        margin: 8px 0;
+        color: #005f99;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .youtube-link:hover {
+        text-decoration: underline;
+    }
+    .btn-container {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .btn {
+        background-color: #d35400;
+        color: white;
+        padding: 12px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    .btn:hover {
+        background-color: #e67e22;
+    }
+</style>
+</head>
+<body>
+
+<header>📚 Database - Learn</header>
+
+<main>
+    <h2>What is a Database?</h2>
+    <p>
+        A <strong>Database</strong> is an organized collection of structured information, or data, typically stored electronically in a computer system. 
+        A database is controlled by a Database Management System (DBMS).
+    </p>
+
+    <h2>Key Concepts</h2>
+    <p><strong>1. Tables:</strong> Store data in rows and columns.</p>
+    <p><strong>2. Primary Key:</strong> Unique identifier for each record in a table.</p>
+    <p><strong>3. Foreign Key:</strong> Links two tables together.</p>
+    <p><strong>4. Relationships:</strong> Define how tables connect with each other.</p>
+    <p><strong>5. Normalization:</strong> Process to reduce redundancy and improve data integrity.</p>
+    <p><strong>6. SQL vs NoSQL:</strong> SQL databases are relational, NoSQL are non-relational.</p>
+
+    <h2>Example SQL Queries</h2>
+    <div class="example">
+        CREATE TABLE Students (<br>
+        &nbsp;&nbsp;ID INT PRIMARY KEY,<br>
+        &nbsp;&nbsp;Name VARCHAR(50),<br>
+        &nbsp;&nbsp;Age INT<br>
+        );<br><br>
+        INSERT INTO Students VALUES (1, 'John Doe', 21);<br>
+        SELECT * FROM Students;
+    </div>
+
+    <h2>Learn More</h2>
+    <a class="youtube-link" href="https://www.youtube.com/watch?v=HXV3zeQKqGY" target="_blank">Intro to Databases - YouTube</a>
+    <a class="youtube-link" href="https://www.youtube.com/watch?v=9Pzj7Aj25lw" target="_blank">SQL Basics - YouTube</a>
+    <a class="youtube-link" href="https://www.youtube.com/watch?v=ZS_kXvOeQ5Y" target="_blank">SQL vs NoSQL - YouTube</a>
+
+    <div class="btn-container">
+        <button class="btn" onclick="window.location.href='technicalmcqs.html'">⬅ Back</button>
+        <button class="btn" onclick="window.location.href='databasetest.html'">📝 Take Test</button>
+    </div>
+</main>
+
+</body>
+</html>

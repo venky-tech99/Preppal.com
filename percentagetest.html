@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Percentage Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #fff8f0, #ffcc80);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff9800;
+    }
+
+    #question-box {
+      margin: 30px 0;
+    }
+
+    .options {
+      margin-top: 15px;
+    }
+
+    .option {
+      background: #fff3e0;
+      border: 2px solid #ffa726;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .option:hover {
+      background-color: #ffe0b2;
+    }
+
+    .selected {
+      background-color: #ffe0b2;
+      border: 2px solid #fb8c00;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #2196f3;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #tracker {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 5px;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .tracker-item {
+      background-color: #4caf50;
+      color: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    #timer {
+      text-align: center;
+      font-size: 18px;
+      color: #e65100;
+      margin-top: 10px;
+    }
+
+    .bottom-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Percentage Test</h2>
+    <div class="bottom-buttons">
+      <button onclick="goBack()">← Back</button>
+      <button onclick="startExam()">Start Exam</button>
+    </div>
+    <div id="timer" class="hidden">Time left: 60s</div>
+    <div id="question-box" class="hidden"></div>
+
+    <div class="buttons hidden" id="navigation-buttons">
+      <button onclick="prevQuestion()">Back</button>
+      <button onclick="submitTest()">Submit</button>
+      <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <div id="tracker" class="hidden"></div>
+    <div id="result" class="hidden"></div>
+  </div>
+
+  <script src="percentageTest.js"></script>
+</body>
+</html>

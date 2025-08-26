@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Series - Logical Reasoning</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, orange, #0096FF, white);
+        color: #000;
+    }
+    header {
+        background-color: #000;
+        color: orange;
+        padding: 20px;
+        text-align: center;
+        font-size: 2rem;
+    }
+    .container {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .definition {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 15px;
+        line-height: 1.6;
+    }
+    .topic {
+        background: rgba(255, 255, 255, 0.85);
+        padding: 20px;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+    }
+    .topic:hover {
+        transform: scale(1.03);
+        background: #0096FF;
+        color: white;
+    }
+    .topic h2 {
+        margin: 0 0 10px 0;
+        color: darkblue;
+    }
+    .topic p {
+        margin: 0;
+    }
+    .topic a {
+        display: inline-block;
+        margin-top: 10px;
+        color: #0000EE;
+        text-decoration: underline;
+    }
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+    .buttons button {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    .back-btn { background: red; color: white; }
+    .back-btn:hover { background: darkred; }
+    .test-btn { background: green; color: white; }
+    .test-btn:hover { background: darkgreen; }
+    .next-btn { background: blue; color: white; }
+    .next-btn:hover { background: darkblue; }
+</style>
+</head>
+<body>
+
+<header>Series - Logical Reasoning</header>
+
+<div class="container">
+    <div class="definition">
+        <h2>What is a Series?</h2>
+        <p>
+            In logical reasoning, a series is a sequence of numbers, letters, or figures 
+            that follow a certain pattern or rule. The objective is to identify the rule 
+            and determine the missing or next term. Series can be numerical, alphabetical, 
+            or mixed, and are a common type of reasoning question in competitive exams.
+        </p>
+    </div>
+
+    <div class="topic">
+        <h2>1. 2, 4, 8, 16, ?</h2>
+        <p><strong>Explanation:</strong> Each term is multiplied by 2. Next term = 16 × 2 = 32.</p>
+        <a href="https://www.youtube.com/watch?v=ZfchB4mH3zA" target="_blank">Watch Explanation</a>
+    </div>
+
+    <div class="topic">
+        <h2>2. A, C, E, G, ?</h2>
+        <p><strong>Explanation:</strong> Skipping one letter each time. After G comes I.</p>
+        <a href="https://www.youtube.com/watch?v=0Ag8m_rZT7U" target="_blank">Watch Explanation</a>
+    </div>
+
+    <div class="topic">
+        <h2>3. 5, 10, 20, 40, ?</h2>
+        <p><strong>Explanation:</strong> Multiply by 2 each step. Next = 80.</p>
+        <a href="https://www.youtube.com/watch?v=OibP0u1HgJA" target="_blank">Watch Explanation</a>
+    </div>
+
+    <div class="topic">
+        <h2>4. 1, 4, 9, 16, ?</h2>
+        <p><strong>Explanation:</strong> Perfect squares (1², 2², 3², 4², ...). Next = 25.</p>
+        <a href="https://www.youtube.com/watch?v=prPljqsGfH4" target="_blank">Watch Explanation</a>
+    </div>
+
+    <div class="topic">
+        <h2>5. Z, X, V, T, ?</h2>
+        <p><strong>Explanation:</strong> Moving backwards by 2 letters each time. Next = R.</p>
+        <a href="https://www.youtube.com/watch?v=whtvlf3w4X4" target="_blank">Watch Explanation</a>
+    </div>
+
+    <div class="topic">
+        <h2>6. 3, 6, 12, 24, ?</h2>
+        <p><strong>Explanation:</strong> Multiply by 2 each step. Next = 48.</p>
+        <a href="https://www.youtube.com/watch?v=U5HwS6HTZ0E" target="_blank">Watch Explanation</a>
+    </div>
+
+    <div class="topic">
+        <h2>7. B, D, G, K, ?</h2>
+        <p><strong>Explanation:</strong> +2, +3, +4 in position values. Next = P.</p>
+        <a href="https://www.youtube.com/watch?v=2RJh_smqhAM" target="_blank">Watch Explanation</a>
+    </div>
+
+    <div class="topic">
+        <h2>8. 1, 2, 4, 7, 11, ?</h2>
+        <p><strong>Explanation:</strong> +1, +2, +3, +4... Next = 16.</p>
+        <a href="https://www.youtube.com/watch?v=gKf3eoZfqqc" target="_blank">Watch Explanation</a>
+    </div>
+
+    <div class="topic">
+        <h2>9. 100, 90, 80, 70, ?</h2>
+        <p><strong>Explanation:</strong> Subtracting 10 each time. Next = 60.</p>
+        <a href="https://www.youtube.com/watch?v=sN__Cl3m6JA" target="_blank">Watch Explanation</a>
+    </div>
+
+    <div class="topic">
+        <h2>10. C, F, J, O, ?</h2>
+        <p><strong>Explanation:</strong> +3, +4, +5 in letter positions. Next = U.</p>
+        <a href="https://www.youtube.com/watch?v=ubHyPz1N1qA" target="_blank">Watch Explanation</a>
+    </div>
+
+    <div class="buttons">
+        <button class="back-btn" onclick="window.location.href='logicalreasoning.html'">Back</button>
+        <button class="test-btn" onclick="window.location.href='seriestest.html'">Test</button>
+        <button class="next-btn" onclick="window.location.href='blood-relations.html'">Next</button>
+    </div>
+</div>
+
+</body>
+</html>

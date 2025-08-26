@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Structures - Preppal</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: linear-gradient(to bottom right, #ffecd2, #fcb69f);
+        color: #333;
+        line-height: 1.6;
+    }
+    header {
+        background: linear-gradient(90deg, #ff6f61, #ffb347);
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+        animation: fadeIn 1s ease-in-out;
+    }
+    h2 {
+        color: #d35400;
+        margin-top: 30px;
+        border-bottom: 3px solid #f39c12;
+        padding-bottom: 5px;
+    }
+    .example-box {
+        background: #fff3e0;
+        border-left: 6px solid #f39c12;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+    }
+    pre {
+        background: #2d3436;
+        color: #f1f2f6;
+        padding: 15px;
+        border-radius: 8px;
+        overflow-x: auto;
+    }
+    .diagram {
+        background: #ecf0f1;
+        border: 2px dashed #7f8c8d;
+        padding: 20px;
+        text-align: center;
+        font-style: italic;
+        margin: 20px 0;
+    }
+    .btns {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+    .btns a {
+        text-decoration: none;
+        background: #ff6f61;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        transition: 0.3s;
+        font-weight: bold;
+    }
+    .btns a:hover {
+        background: #e74c3c;
+    }
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+</style>
+</head>
+<body>
+
+<header>Data Structures - Learn</header>
+
+<div class="container">
+    <h2>What are Data Structures?</h2>
+    <p>
+        A <b>Data Structure</b> is a way of organizing and storing data so that it can be accessed and modified efficiently. 
+        In programming and computer science, data structures are used to manage large amounts of data efficiently for various operations such as searching, insertion, deletion, and updating.
+    </p>
+    <div class="example-box">
+        <b>Example:</b> Imagine a bookshelf. The way books are arranged (alphabetically, by genre, by size) is similar to how data structures organize data.
+    </div>
+
+    <h2>Types of Data Structures</h2>
+    <ul>
+        <li><b>Primitive Data Structures:</b> int, char, float, boolean, etc.</li>
+        <li><b>Non-Primitive Data Structures:</b> Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Tables.</li>
+    </ul>
+
+    <h2>Array</h2>
+    <p>An <b>array</b> is a collection of elements stored at contiguous memory locations.</p>
+    <div class="diagram">
+        [10] [20] [30] [40] [50]  
+        Index → 0   1   2   3   4
+    </div>
+    <pre>
+// Example: Array in C
+int arr[5] = {10, 20, 30, 40, 50};
+printf("%d", arr[2]); // Output: 30
+    </pre>
+
+    <h2>Linked List</h2>
+    <p>A <b>Linked List</b> is a linear data structure where elements are stored in nodes, and each node contains a data field and a reference (link) to the next node.</p>
+    <div class="diagram">
+        [Data|Next] → [Data|Next] → [Data|NULL]
+    </div>
+    <pre>
+// Example: Singly Linked List Node in C
+struct Node {
+    int data;
+    struct Node* next;
+};
+    </pre>
+
+    <h2>Stack</h2>
+    <p>A <b>Stack</b> follows the <b>LIFO (Last In First Out)</b> principle.</p>
+    <div class="diagram">
+        TOP → [40]  
+               [30]  
+               [20]  
+               [10]
+    </div>
+    <div class="example-box">
+        Example: Undo operation in text editors uses a stack.
+    </div>
+
+    <h2>Queue</h2>
+    <p>A <b>Queue</b> follows the <b>FIFO (First In First Out)</b> principle.</p>
+    <div class="diagram">
+        Front → [10] [20] [30] [40] ← Rear
+    </div>
+    <div class="example-box">
+        Example: People standing in a line for tickets.
+    </div>
+
+    <h2>Tree</h2>
+    <p>A <b>Tree</b> is a hierarchical data structure with nodes connected by edges.</p>
+    <div class="diagram">
+        Root  
+         ├── Child1  
+         └── Child2
+    </div>
+
+    <h2>Graph</h2>
+    <p>A <b>Graph</b> is a collection of nodes (vertices) connected by edges.</p>
+    <div class="diagram">
+        (A) --- (B)  
+         |       |  
+        (C) --- (D)
+    </div>
+
+    <h2>Hash Table</h2>
+    <p>A <b>Hash Table</b> stores key-value pairs and uses a hash function to compute the index for storing data.</p>
+
+    <h2>Applications of Data Structures</h2>
+    <ul>
+        <li>Database indexing (B-Trees, Hash Tables)</li>
+        <li>Network routing (Graphs)</li>
+        <li>Operating system scheduling (Queues)</li>
+        <li>Compiler syntax checking (Stacks)</li>
+    </ul>
+
+    <div class="btns">
+        <a href="technicalmcqs.html">&larr; Back</a>
+        <a href="datastructurestest.html">Take Test &rarr;</a>
+    </div>
+</div>
+
+</body>
+</html>

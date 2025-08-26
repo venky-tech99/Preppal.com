@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering Test - PrepPal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e0f7fa);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #00796b;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .question {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .options label {
+            display: block;
+            padding: 8px;
+            background: #f1f1f1;
+            margin: 8px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        .navigation {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #00796b;
+            color: white;
+            border: none;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #004d40;
+        }
+        .result {
+            background: #c8e6c9;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 18px;
+            display: none;
+        }
+        .timer {
+            text-align: right;
+            font-size: 18px;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    🖥 Software Engineering Test - PrepPal
+</header>
+
+<div class="container">
+    <div class="timer" id="timer">Time Left: 30:00</div>
+    <div id="quiz-container"></div>
+
+    <div class="navigation">
+        <button onclick="prevQuestion()">Previous</button>
+        <button onclick="nextQuestion()">Next</button>
+        <button onclick="submitQuiz()">Submit</button>
+    </div>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script src="softwareengineeringtest.js"></script>
+
+</body>
+</html>

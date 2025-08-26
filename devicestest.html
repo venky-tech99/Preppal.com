@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Networking Devices Test</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, orange, white, blue);
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background: #ff6600;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+    .question-box {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .options label {
+        display: block;
+        padding: 8px;
+        margin-bottom: 5px;
+        background: #f0f0f0;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .options input {
+        margin-right: 10px;
+    }
+    .navigation {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .nav-btn {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        margin: 5px;
+        background: green;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .controls button {
+        padding: 10px 20px;
+        background: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .timer {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: right;
+        margin-bottom: 10px;
+    }
+    .result {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        margin-top: 20px;
+    }
+    .wrong-answer {
+        background: #ffe6e6;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+
+<header>Networking Devices Test</header>
+
+<div class="container">
+    <div class="timer">Time left: <span id="time">60</span> sec</div>
+    <div id="quiz-container"></div>
+
+    <div class="navigation" id="navigation"></div>
+
+    <div class="controls">
+        <button onclick="prevQuestion()">Back</button>
+        <button onclick="nextQuestion()">Next</button>
+        <button onclick="submitTest()">Submit</button>
+    </div>
+
+    <div id="result" class="result" style="display:none;"></div>
+</div>
+
+<script src="devicestest.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Networking Devices — PrepPal</title>
+<style>
+  :root{--bg:#f6fff6;--accent:#ff8a00;--blue:#0b79d0;--muted:#3b4750}
+  body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#f6fff6,#eefbff);color:#0f1720}
+  header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(11,121,208,0.04)}
+  .wrap{max-width:1100px;margin:20px auto;padding:18px}
+  .grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+  .card{background:#fff;padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(11,21,40,0.04)}
+  .device{display:flex;gap:12px;align-items:center;padding:10px;border-radius:10px;border:1px solid #eef6f8;margin-top:10px}
+  .icon{width:56px;height:56px;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--blue));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}
+  .desc{color:var(--muted);font-size:14px}
+  .diagram{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:14px}
+  .btns{display:flex;gap:8px;margin-top:12px}
+  .btn{padding:10px 12px;border-radius:8px;border:0;background:var(--blue);color:#fff;cursor:pointer}
+  @media(max-width:980px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><h1 style="color:var(--blue);margin:0">Networking Devices — PrepPal</h1>
+  <div style="display:flex;gap:8px">
+    <button class="btn" onclick="location.href='tcpip-model.html'">← Prev</button>
+    <button class="btn" onclick="location.href='networking.html'">Back</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+    <main class="card">
+      <h2 style="margin:0;color:var(--accent)">Common Devices & Purpose</h2>
+      <div class="device"><div class="icon">R</div><div><strong>Router</strong><div class="desc">Connects networks, routes packets using IP. Router does NAT, routing protocols (OSPF, BGP).</div></div></div>
+      <div class="device"><div class="icon">S</div><div><strong>Switch</strong><div class="desc">Layer 2 device forwarding frames using MAC addresses — used in LANs.</div></div></div>
+      <div class="device"><div class="icon">H</div><div><strong>Hub</strong><div class="desc">Old broadcast device — sends to all ports (rare now).</div></div></div>
+      <div class="device"><div class="icon">AP</div><div><strong>Access Point</strong><div class="desc">Wireless device providing WiFi to clients; bridges wireless to wired LAN.</div></div></div>
+      <div class="device"><div class="icon">F</div><div><strong>Firewall</strong><div class="desc">Security appliance filtering traffic based on rules (stateful or stateless).</div></div></div>
+
+      <h3 style="margin-top:12px">Placement Example</h3>
+      <p class="desc">Design a small office network: internet → modem → router (NAT, DHCP) → switch → devices & AP. For interviews present IP plan and VLANs for separation.</p>
+
+      <div style="margin-top:12px;background:#fff8ef;padding:10px;border-radius:8px">
+        <strong>Common Qs</strong>
+        <ol style="margin:8px 0 0 16px;color:var(--muted)">
+          <li>Difference between hub, switch, router?</li>
+          <li>When to use access lists vs firewall rules?</li>
+          <li>What is NAT and why needed?</li>
+        </ol>
+      </div>
+    </main>
+
+    <aside class="card">
+      <h3 style="margin:0;color:var(--blue)">Device Comparison</h3>
+      <table style="width:100%;margin-top:10px;border-collapse:collapse">
+        <tr><th style="text-align:left">Device</th><th style="text-align:left">Layer</th></tr>
+        <tr><td>Router</td><td>Network (3)</td></tr>
+        <tr><td>Switch</td><td>Data Link (2)</td></tr>
+        <tr><td>Firewall</td><td>Network / App (varies)</td></tr>
+        <tr><td>Access Point</td><td>Network Access</td></tr>
+      </table>
+
+      <div style="margin-top:12px">
+        <strong>Placement Tip</strong>
+        <p class="desc" style="margin-top:8px">Sketch the topology quickly during interviews and explain traffic flow & failure points (single point of failure, redundancy).</p>
+      </div>
+
+      <div class="btns" style="margin-top:14px">
+        <button class="btn" onclick="location.href='tcpip-model.html'">Prev</button>
+        <button class="btn" onclick="location.href='ip-addressing.html'">Next</button>
+      </div>
+    </aside>
+  </div>
+</div>
+</body>
+</html>

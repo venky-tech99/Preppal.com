@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical MCQs</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, red, blue, green, pink);
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        width: 100%;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        background: rgba(0,0,0,0.3);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+
+    header button {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    h1 {
+        margin: 20px 0;
+        font-size: 2em;
+        text-align: center;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+
+    .topics-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        width: 90%;
+        max-width: 1000px;
+    }
+
+    .topic-card {
+        background: rgba(255,255,255,0.15);
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease, background 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .topic-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255,255,255,0.25);
+    }
+
+    .topic-card h2 {
+        margin-bottom: 10px;
+        color: white;
+        font-size: 1.5em;
+    }
+
+    .topic-card p {
+        font-size: 0.95em;
+        color: #f5f5f5;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <button onclick="window.location.href='dashboard.html'">&larr;</button>
+</header>
+
+<h1>Technical MCQs</h1>
+
+<div class="topics-container">
+    <div class="topic-card" onclick="window.location.href='programming.html'">
+        <h2>Programming</h2>
+        <p>Test your skills in C, Java, Python, and more.</p>
+    </div>
+    <div class="topic-card" onclick="window.location.href='database-learn.html'">
+        <h2>DBMS</h2>
+        <p>Questions on SQL, normalization, transactions, and queries.</p>
+    </div>
+    <div class="topic-card" onclick="window.location.href='networking.html'">
+        <h2>Networking</h2>
+        <p>IP addressing, protocols, OSI model, and more.</p>
+    </div>
+    <div class="topic-card" onclick="window.location.href='os.html'">
+        <h2>Operating Systems</h2>
+        <p>Process management, memory, scheduling, and more.</p>
+    </div>
+    <div class="topic-card" onclick="window.location.href='datastructures.html'">
+        <h2>Data Structures</h2>
+        <p>MCQs on arrays, linked lists, stacks, queues, and trees.</p>
+    </div>
+    <div class="topic-card" onclick="window.location.href='softwareengineering.html'">
+        <h2>Software Engineering</h2>
+        <p>SDLC, design patterns, testing, and project management.</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>OSI Model — PrepPal</title>
+<style>
+  :root{
+    --bg:#f7fbff; --accent:#ff8a00; --blue:#0b79d0; --muted:#5b6b7a;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#f7fbff,#eef6ff);color:#0f1720}
+  header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:rgba(11,121,208,0.06);backdrop-filter:blur(6px)}
+  header h1{margin:0;color:var(--blue);font-size:20px}
+  .wrap{max-width:1100px;margin:24px auto;padding:18px}
+  .hero{display:flex;gap:20px;align-items:center}
+  .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(11,21,40,0.06)}
+  .left{flex:1}
+  .right{width:360px}
+  .layer-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+  .layer{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;border:1px solid rgba(11,121,208,0.06)}
+  .layer .dot{width:44px;height:44px;border-radius:8px;background:linear-gradient(180deg,var(--accent),#ff5a1f);color:white;display:flex;align-items:center;justify-content:center;font-weight:800}
+  .layer h3{margin:0;font-size:15px}
+  .desc{color:var(--muted);margin-top:8px;font-size:14px;line-height:1.5}
+  /* animated flow */
+  .wire{height:130px;display:flex;align-items:center;justify-content:center}
+  .packet{width:90px;height:40px;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--blue));color:white;display:flex;align-items:center;justify-content:center;font-weight:700;transform:translateX(-300px);animation:flow 6s linear infinite}
+  @keyframes flow{0%{transform:translateX(-300px)}100%{transform:translateX(320px)}}
+  /* Quick table */
+  table{width:100%;border-collapse:collapse;margin-top:14px}
+  th,td{padding:10px;border-bottom:1px solid #eef3f8;text-align:left}
+  th{background:#f1f8ff;color:var(--blue)}
+  .tips{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+  .btns{display:flex;gap:10px;margin-top:16px}
+  .btn{background:var(--blue);color:white;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+  .btn.secondary{background:#fff;border:1px solid #d6e9ff;color:var(--blue)}
+  footer{max-width:1100px;margin:18px auto;text-align:center;color:#5b6b7a;font-size:13px}
+  .interview{margin-top:14px;background:#fff7ed;padding:12px;border-radius:8px;border:1px solid #ffe6cc}
+  /* responsive */
+  @media(max-width:980px){.hero{flex-direction:column}.right{width:100%}}
+</style>
+</head>
+<body>
+<header>
+  <h1>PrepPal — OSI Model (Placement Ready)</h1>
+  <div style="display:flex;gap:8px">
+    <button class="btn secondary" onclick="location.href='networking.html'">← Back</button>
+    <button class="btn" onclick="location.href='tcpip-model.html'">Next: TCP/IP →</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="left card">
+      <h2 style="margin:0;color:var(--accent)">OSI Model — Overview</h2>
+      <p class="desc">The OSI (Open Systems Interconnection) model is a conceptual framework of seven layers that explains how networks communicate. For interviews memorize responsibilities of each layer and typical examples (protocols & devices).</p>
+
+      <div class="layer-list">
+        <div class="layer"><div class="dot">7</div><div><h3>Application Layer</h3><div class="desc">User-facing services (HTTP, SMTP, FTP). Handles application data.</div></div></div>
+        <div class="layer"><div class="dot">6</div><div><h3>Presentation Layer</h3><div class="desc">Formats/encodes data (encryption, compression).</div></div></div>
+        <div class="layer"><div class="dot">5</div><div><h3>Session Layer</h3><div class="desc">Manages sessions/connection dialogs.</div></div></div>
+        <div class="layer"><div class="dot">4</div><div><h3>Transport Layer</h3><div class="desc">End-to-end communication (TCP, UDP). Handles reliability, flow control.</div></div></div>
+        <div class="layer"><div class="dot">3</div><div><h3>Network Layer</h3><div class="desc">Routing between networks (IP). Decides path.</div></div></div>
+        <div class="layer"><div class="dot">2</div><div><h3>Data Link Layer</h3><div class="desc">Frames, MAC addressing, switches. Detects/corrects physical errors.</div></div></div>
+        <div class="layer"><div class="dot">1</div><div><h3>Physical Layer</h3><div class="desc">Wires, signals, physical media, NIC speed.</div></div></div>
+      </div>
+
+      <div class="wire card" aria-hidden="true">
+        <div style="width:100%;height:140px;display:flex;align-items:center;justify-content:center">
+          <div style="width:680px;height:8px;background:linear-gradient(90deg,#eaf6ff,#fff3e6);border-radius:6px;position:relative">
+            <div class="packet">PACKET →</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:12px">Placement-focused Example</h3>
+      <p class="desc">When you open a webpage (http): Application layer (browser) creates request → Transport (TCP) ensures ordered delivery → Network (IP) routes packets → Data Link/Physical transport physically. Mention ports (HTTP = 80, HTTPS = 443) during interviews.</p>
+
+      <h3 style="margin-top:10px">Common pitfalls to explain</h3>
+      <ul class="desc">
+        <li>Don’t confuse Presentation (formatting/encryption) with Application (service-level)</li>
+        <li>Transport (TCP) provides reliability; UDP does not</li>
+      </ul>
+
+      <div class="interview">
+        <strong>Interview Qs</strong>
+        <ol style="margin:8px 0 0 16px">
+          <li>Explain TCP vs UDP and when to use each.</li>
+          <li>Which layer handles routing and which handles switching?</li>
+          <li>Why encryption is not at the transport layer?</li>
+        </ol>
+      </div>
+    </div>
+
+    <aside class="right card">
+      <h3 style="margin:0;color:var(--blue)">Quick Revision</h3>
+      <table>
+        <thead><tr><th>Layer</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>7 App</td><td>HTTP, SMTP</td></tr>
+          <tr><td>6 Presentation</td><td>Encryption, Compression</td></tr>
+          <tr><td>5 Session</td><td>Connections</td></tr>
+          <tr><td>4 Transport</td><td>TCP/UDP</td></tr>
+          <tr><td>3 Network</td><td>IP, Routing</td></tr>
+          <tr><td>2 Data Link</td><td>MAC, Switch</td></tr>
+          <tr><td>1 Physical</td><td>Ethernet, Fiber</td></tr>
+        </tbody>
+      </table>
+
+      <div class="tips">
+        <div class="card" style="padding:10px">
+          <strong>Placement Tip</strong>
+          <p class="desc" style="margin:8px 0 0">Describe concrete examples: "When pinging, ICMP works at Network layer." Concrete examples win interviews.</p>
+        </div>
+        <div class="card" style="padding:10px">
+          <strong>Memory Trick</strong>
+          <p class="desc" style="margin:8px 0 0">Remember phrase: "All People Seem To Need Data Processing" (App → Phys).</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <small style="color:var(--muted)">PrepPal — OSI Model • concise theory + interview questions to practice</small>
+</footer>
+</body>
+</html>

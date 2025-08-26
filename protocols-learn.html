@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Network Protocols — PrepPal</title>
+<style>
+  :root{--accent:#ff8a00;--blue:#0b79d0;--bg:#f9fbff;--muted:#606b73}
+  body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#f9fbff,#fffaf6);color:#0f1720}
+  header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(11,121,208,0.04)}
+  .wrap{max-width:1100px;margin:18px auto;padding:18px}
+  .card{background:#fff;padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(11,21,40,0.04)}
+  .proto{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;border:1px solid #eef6ff;margin-top:10px}
+  .tag{background:linear-gradient(90deg,var(--accent),var(--blue));color:#fff;padding:10px;border-radius:8px;font-weight:800}
+  .desc{color:var(--muted)}
+  .btn{padding:10px 12px;border-radius:8px;border:0;background:var(--blue);color:#fff;cursor:pointer}
+  table{width:100%;border-collapse:collapse;margin-top:12px}
+  th,td{padding:8px;border-bottom:1px solid #f2f6f9}
+</style>
+</head>
+<body>
+<header>
+  <h1 style="color:var(--blue);margin:0">Network Protocols — PrepPal</h1>
+  <div style="display:flex;gap:8px">
+    <button class="btn" onclick="location.href='ip-addressing.html'">← Prev</button>
+    <button class="btn" onclick="location.href='networking.html'">Back</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="card">
+    <h2 style="color:var(--accent);margin:0 0 8px 0">Key Protocols & Use-cases</h2>
+
+    <div class="proto"><div class="tag">HTTP/HTTPS</div><div><strong>Use:</strong> Web traffic — HTTPS is encrypted (TLS).<div class="desc">Interview note: TLS handshake and certificate validation are common questions.</div></div></div>
+
+    <div class="proto"><div class="tag">DNS</div><div><strong>Use:</strong> Domain → IP resolution.<div class="desc">Explain iterative/recursive queries and record types (A/AAAA/CNAME).</div></div></div>
+
+    <div class="proto"><div class="tag">DHCP</div><div><strong>Use:</strong> Auto IP assignment.<div class="desc">DHCP states: DISCOVER → OFFER → REQUEST → ACK.</div></div></div>
+
+    <div class="proto"><div class="tag">FTP / SFTP</div><div><strong>Use:</strong> File transfer (SFTP over SSH is secure).</div></div>
+
+    <div class="proto"><div class="tag">SMTP</div><div><strong>Use:</strong> Sending email; often combined with IMAP/POP3 for retrieval.</div></div>
+
+    <h3 style="margin-top:12px">Practical example: HTTPS request</h3>
+    <p class="desc">Browser uses TLS handshake (ClientHello → ServerHello → certificates → key exchange) then HTTP encrypted data flows. Mention port 443 and certificate chain in interviews.</p>
+
+    <h3 style="margin-top:12px">Quick table</h3>
+    <table>
+      <thead><tr><th>Protocol</th><th>Port</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>HTTP</td><td>80</td><td>Unencrypted</td></tr>
+        <tr><td>HTTPS</td><td>443</td><td>Encrypted via TLS</td></tr>
+        <tr><td>DNS</td><td>53</td><td>UDP/TCP</td></tr>
+        <tr><td>SMTP</td><td>25,465,587</td><td>Email send</td></tr>
+        <tr><td>FTP</td><td>20/21</td><td>Unencrypted; use SFTP</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:12px;background:#fff9f0;padding:12px;border-radius:8px">
+      <strong>Interview Qs</strong>
+      <ol style="margin:8px 0 0 16px;color:var(--muted)">
+        <li>Explain TLS handshake and difference between symmetric & asymmetric cryptography.</li>
+        <li>Why DNS is a target for attacks and how to protect DNS?</li>
+        <li>Difference between POP3 and IMAP?</li>
+      </ol>
+    </div>
+
+    <div style="display:flex;gap:12px;margin-top:12px">
+      <button class="btn" onclick="location.href='ip-addressing.html'">Prev</button>
+      <button class="btn" onclick="location.href='networking-devices.html'">Next: recap</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

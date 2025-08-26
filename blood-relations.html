@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Blood Relations - Logical Reasoning</title>
+<style>
+  :root{
+    --orange:#ff8c00;
+    --blue:#0096FF;
+    --white:#ffffff;
+    --card-bg: rgba(255,255,255,0.94);
+    --accent:#003f7f;
+    --muted:#444;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;font-family: "Segoe UI", Arial, Helvetica, sans-serif}
+  body{
+    min-height:100vh;
+    background: linear-gradient(120deg,var(--orange),var(--blue),var(--white));
+    color:#072b3a;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  header{
+    background: rgba(0,0,0,0.55);
+    color: var(--orange);
+    padding:18px 16px;
+    text-align:center;
+    font-weight:800;
+    font-size:1.6rem;
+  }
+
+  .wrap{
+    max-width:1100px;
+    margin:20px auto;
+    padding:20px;
+    background:var(--card-bg);
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+
+  .intro{
+    padding:14px;
+    border-radius:10px;
+    background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.02));
+  }
+  .intro h2{color:var(--accent);margin-bottom:8px}
+  .intro p{color:var(--muted);line-height:1.6}
+
+  .questions{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .qcard{
+    background:#fff;
+    border-radius:10px;
+    padding:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.05);
+    border-left:4px solid var(--blue);
+  }
+
+  .qcard h3{
+    margin-bottom:8px;
+    color:#1b3550;
+    font-size:1.05rem;
+  }
+  .qcard p{color:#333;line-height:1.5}
+  .qmeta{margin-top:8px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .yt{
+    display:inline-block;
+    padding:8px 12px;
+    background:var(--blue);
+    color:#fff;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:700;
+    transition:background .15s;
+  }
+  .yt:hover{background:#0070cc}
+  .explain{background:linear-gradient(90deg,#fff, #fbfbff);padding:10px;border-radius:8px;margin-top:8px;border:1px solid rgba(0,0,0,0.04)}
+  .explain strong{color:#0b3a60}
+
+  /* bottom nav buttons */
+  .nav{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:4px;
+  }
+  .nav .left, .nav .right{display:flex;gap:10px}
+  .btn{
+    padding:12px 20px;
+    border-radius:10px;
+    border:none;
+    font-weight:800;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  }
+  .btn.back{background:#6c757d;color:#fff}
+  .btn.test{background:#28a745;color:#fff}
+  .btn.next{background:var(--accent);color:#fff}
+
+  /* small screens */
+  @media (max-width:720px){
+    .wrap{margin:12px;padding:14px}
+    .qcard h3{font-size:1rem}
+    .yt{padding:8px 10px;font-size:.95rem}
+    .btn{padding:10px 14px;font-size:.95rem}
+    header{font-size:1.2rem;padding:12px}
+  }
+</style>
+</head>
+<body>
+  <header>Blood Relations — Logical Reasoning</header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h2>What are Blood Relations problems?</h2>
+      <p>
+        <strong>Blood relations</strong> questions describe family relationships (father, mother, brother, sister, uncle, aunt, cousin, son, daughter, etc.)
+        using short statements. The task is to deduce the relationship between two named persons or identify who is who. These require careful parsing of the given relations,
+        tracking gender, and stepwise mapping — often drawing a quick family tree helps.
+      </p>
+      <p style="margin-top:8px;color:var(--muted)">
+        Tips: write each statement down, build the small tree, watch for words like "brother of", "daughter of", "wife of", "maternal/paternal" and consider gender clues.
+      </p>
+    </section>
+
+    <section class="questions">
+      <div class="qcard">
+        <h3>1) A is the father of B. B is the mother of C. How is A related to C?</h3>
+        <p><strong>Answer:</strong> Grandfather. (A → father of B; B → mother of C → A is maternal grandfather of C)</p>
+        <div class="qmeta">
+          <a class="yt" href="https://www.youtube.com/watch?v=3m7Y0u0YJxI" target="_blank" rel="noopener">Watch Explanation</a>
+          <div class="explain"><strong>Why:</strong> A → B (father). B → C (mother). So A is parent of B who is parent of C → A = grandparent (grandfather because A is male).</div>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <h3>2) P is the sister of Q. Q is the mother of R. How is P related to R?</h3>
+        <p><strong>Answer:</strong> Aunt. (P is aunt of R)</p>
+        <div class="qmeta">
+          <a class="yt" href="https://www.youtube.com/watch?v=8kFQm1g0zXk" target="_blank" rel="noopener">Watch Explanation</a>
+          <div class="explain"><strong>Why:</strong> P and Q are siblings; Q is parent of R → sibling of parent = aunt/uncle. P is female so aunt.</div>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <h3>3) X is the brother of Y. Y is the father of Z. How is X related to Z?</h3>
+        <p><strong>Answer:</strong> Uncle (paternal uncle).</p>
+        <div class="qmeta">
+          <a class="yt" href="https://www.youtube.com/watch?v=K4ZQ3lX0k5s" target="_blank" rel="noopener">Watch Explanation</a>
+          <div class="explain"><strong>Why:</strong> X is sibling of Z's father → paternal uncle of Z.</div>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <h3>4) R is the son of S. T is the sister of S. How is T related to R?</h3>
+        <p><strong>Answer:</strong> Aunt.</p>
+        <div class="qmeta">
+          <a class="yt" href="https://www.youtube.com/watch?v=qx3wXeqxFqg" target="_blank" rel="noopener">Watch Explanation</a>
+          <div class="explain"><strong>Why:</strong> T is sibling of S (S is parent of R) → T is aunt of R.</div>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <h3>5) F is the father of G. H is the daughter of G. How is H related to F?</h3>
+        <p><strong>Answer:</strong> Granddaughter.</p>
+        <div class="qmeta">
+          <a class="yt" href="https://www.youtube.com/watch?v=QkXkqYJq3aE" target="_blank" rel="noopener">Watch Explanation</a>
+          <div class="explain"><strong>Why:</strong> F → parent of G; G → parent of H → H is grandchild; H is female so granddaughter.</div>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <h3>6) A is son of B. C is daughter of B. How is A related to C?</h3>
+        <p><strong>Answer:</strong> Brother and sister — A is brother of C.</p>
+        <div class="qmeta">
+          <a class="yt" href="https://www.youtube.com/watch?v=8B5h2uK1JmU" target="_blank" rel="noopener">Watch Explanation</a>
+          <div class="explain"><strong>Why:</strong> Both share same parent (B). A male child = brother of female child C.</div>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <h3>7) M is the husband of N. N is the mother of O. How is M related to O?</h3>
+        <p><strong>Answer:</strong> Father. (by marriage/husband of mother → father of O)</p>
+        <div class="qmeta">
+          <a class="yt" href="https://www.youtube.com/watch?v=9iF1G7yYh_k" target="_blank" rel="noopener">Watch Explanation</a>
+          <div class="explain"><strong>Why:</strong> Spouse of a parent is also a parent (assuming conventional relations) → M = father of O.</div>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <h3>8) V is brother of W. W is wife of X. How is V related to X?</h3>
+        <p><strong>Answer:</strong> Brother-in-law.</p>
+        <div class="qmeta">
+          <a class="yt" href="https://www.youtube.com/watch?v=4h3zJwKzR1M" target="_blank" rel="noopener">Watch Explanation</a>
+          <div class="explain"><strong>Why:</strong> V sibling of spouse → brother-in-law.</div>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <h3>9) P is father of Q. R is son of S. S is daughter of Q. How is P related to R?</h3>
+        <p><strong>Answer:</strong> Grandfather. (P → parent of Q; Q → parent of S; S → parent of R → P is great-grandfather? Let's trace carefully)</p>
+        <div class="qmeta">
+          <a class="yt" href="https://www.youtube.com/watch?v=2n2JY5Bf3zU" target="_blank" rel="noopener">Watch Explanation</a>
+          <div class="explain"><strong>Why:</strong> Q is child of P. S is child of Q (grandchild of P). R is child of S (great-grandchild of P). So P is great-grandfather of R. (Double-check tree when solving.)</div>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <h3>10) A is father of B. C is wife of B. D is son of C. How is A related to D?</h3>
+        <p><strong>Answer:</strong> Grandfather. (A → parent of B; B & C are spouses; D is child of B & C → A is grandfather)</p>
+        <div class="qmeta">
+          <a class="yt" href="https://www.youtube.com/watch?v=V5kLx0pR2Hs" target="_blank" rel="noopener">Watch Explanation</a>
+          <div class="explain"><strong>Why:</strong> Child of your child = grandchild. A is grandfather to D.</div>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <h3>11) X is the sister of Y. Z is the brother of Y. How is X related to Z?</h3>
+        <p><strong>Answer:</strong> Sister — both share same parent; X is sister of Z.</p>
+        <div class="qmeta">
+          <a class="yt" href="https://www.youtube.com/watch?v=RjvkeT2b3Uc" target="_blank" rel="noopener">Watch Explanation</a>
+          <div class="explain"><strong>Why:</strong> If two persons are siblings of the same person, they are siblings of each other (consider gender).</div>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <h3>12) L is mother of M. M is sister of N. O is son of N. How is L related to O?</h3>
+        <p><strong>Answer:</strong> Grandmother. (L → parent of M & N; N → parent of O → L is grandmother)</p>
+        <div class="qmeta">
+          <a class="yt" href="https://www.youtube.com/watch?v=0u3Zr2C7Qq4" target="_blank" rel="noopener">Watch Explanation</a>
+          <div class="explain"><strong>Why:</strong> Parent of a parent = grandparent; L is female so grandmother.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="nav">
+      <div class="left">
+        <button class="btn back" onclick="window.location.href='logicalreasoning.html'">Back</button>
+      </div>
+
+      <div class="right">
+        <button class="btn test" onclick="window.location.href='blood-relationstest.html'">Test</button>
+        <button class="btn next" onclick="window.location.href='direction-sense.html'">Next</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

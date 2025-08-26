@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCP/IP Model Test</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, orange, white, blue);
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    h1 {
+        text-align: center;
+        color: darkblue;
+    }
+    #timer {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: right;
+        color: red;
+    }
+    .question {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .options label {
+        display: block;
+        margin: 8px 0;
+        background: #f0f8ff;
+        padding: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .options label:hover {
+        background: #d0e8ff;
+    }
+    .navigation {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .navigation button {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin: 3px;
+        background: green;
+        color: white;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .nav-buttons button {
+        background: darkblue;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .nav-buttons button:hover {
+        background: orange;
+    }
+    #result {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+    #explanations {
+        margin-top: 20px;
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+        display: none;
+    }
+    .explanation-item {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>TCP/IP Model Test</h1>
+    <div id="timer">Time Left: 01:00</div>
+
+    <div id="question-container"></div>
+
+    <div class="navigation" id="navigation"></div>
+
+    <div class="nav-buttons">
+        <button id="backBtn">Back</button>
+        <button id="nextBtn">Next</button>
+        <button id="submitBtn">Submit</button>
+    </div>
+
+    <div id="result"></div>
+    <div id="explanations"></div>
+</div>
+
+<script src="tcpiptest.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programming Learn</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, red, blue, green, pink);
+        color: white;
+        line-height: 1.6;
+        padding: 20px;
+    }
+    header {
+        position: sticky;
+        top: 0;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 10px;
+        display: flex;
+        justify-content: flex-start;
+    }
+    header a {
+        text-decoration: none;
+        font-size: 28px;
+        font-weight: bold;
+        color: white;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 8px 14px;
+        border-radius: 50%;
+        transition: background 0.3s;
+    }
+    header a:hover {
+        background: rgba(0, 0, 0, 0.6);
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    section {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        margin-top: 0;
+        color: yellow;
+    }
+    ul {
+        list-style-type: square;
+        padding-left: 20px;
+    }
+    a.yt-link {
+        color: #ffd700;
+        text-decoration: underline;
+    }
+    .nav-buttons {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .nav-buttons button {
+        background: white;
+        color: black;
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 20px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: transform 0.2s, background 0.3s;
+    }
+    .nav-buttons button:hover {
+        transform: scale(1.05);
+        background: #f1f1f1;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <a href="programming.html">&#8592;</a>
+</header>
+
+<h1>Programming Concepts – Learn</h1>
+
+<section>
+    <h2>What is Programming?</h2>
+    <p>Programming is the process of creating instructions for a computer to perform specific tasks. 
+    It involves using a programming language to write code that can solve problems or automate processes.</p>
+</section>
+
+<section>
+    <h2>Key Topics</h2>
+    <ul>
+        <li>Variables & Data Types</li>
+        <li>Conditional Statements (if, else, switch)</li>
+        <li>Loops (for, while, do-while)</li>
+        <li>Functions & Methods</li>
+        <li>Arrays & Strings</li>
+        <li>Object-Oriented Programming (OOP)</li>
+        <li>Recursion</li>
+        <li>Data Structures</li>
+        <li>Algorithms & Complexity</li>
+        <li>File Handling</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Practice Questions</h2>
+    <p><b>Q1:</b> What will be the output of the following code?<br>
+    <code>int x = 5; x += 3; printf("%d", x);</code><br>
+    <b>Answer:</b> 8 – Because x is increased by 3 using the += operator.</p>
+
+    <p><b>Q2:</b> Which loop executes at least once?<br>
+    <b>Answer:</b> do-while loop – It checks the condition after the loop body executes.</p>
+
+    <p><b>Q3:</b> What is the time complexity of binary search?<br>
+    <b>Answer:</b> O(log n) – Because it divides the search space in half each time.</p>
+</section>
+
+<section>
+    <h2>YouTube References</h2>
+    <p><a class="yt-link" href="https://www.youtube.com/watch?v=8PopR3x-VMY" target="_blank">Programming Basics for Beginners</a></p>
+    <p><a class="yt-link" href="https://www.youtube.com/watch?v=Qqx_wzMmFeA" target="_blank">C Programming Tutorial</a></p>
+    <p><a class="yt-link" href="https://www.youtube.com/watch?v=rfscVS0vtbw" target="_blank">Python Programming Crash Course</a></p>
+</section>
+
+<div class="nav-buttons">
+    <button onclick="location.href='programming.html'">Back</button>
+    <button onclick="location.href='programmingtest.html'">Take Test</button>
+    <button onclick="location.href='databases.html'">Next</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PrepPal - Dashboard</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(-45deg, #1a1a40, #2a2a72, #1a1a40, #000000);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        color: white;
+        overflow-x: hidden;
+    }
+
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        background: linear-gradient(90deg, #ff8c00, #ff2e63);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #logoutBtn {
+        background: #ff2e63;
+        border: none;
+        padding: 8px 15px;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 0.95rem;
+        transition: transform 0.2s, background 0.2s;
+    }
+
+    #logoutBtn:hover {
+        transform: scale(1.05);
+        background: #ff4d7d;
+    }
+
+    .search-container {
+        text-align: center;
+        margin: 25px 0;
+    }
+
+    .search-container input {
+        width: 50%;
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        text-align: center;
+        background: rgba(255,255,255,0.1);
+        color: white;
+        box-shadow: 0 4px 20px rgba(255,255,255,0.2);
+        transition: 0.3s;
+    }
+
+    .search-container input:focus {
+        background: rgba(255,255,255,0.2);
+        transform: scale(1.05);
+    }
+
+    .course-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        padding: 20px 50px;
+    }
+
+    .course-card {
+        perspective: 1000px;
+        cursor: pointer;
+    }
+
+    .card-inner {
+        position: relative;
+        width: 100%;
+        padding-top: 120%; /* Smaller height */
+        transform-style: preserve-3d;
+        transition: transform 0.8s;
+    }
+
+    .course-card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+        position: absolute;
+        inset: 0;
+        border-radius: 15px;
+        padding: 20px;
+        backface-visibility: hidden;
+    }
+
+    .card-front {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    .card-front h3 {
+        color: white;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        font-size: 1.2rem;
+        text-align: center;
+        background: rgba(0,0,0,0.4);
+        padding: 6px 12px;
+        border-radius: 8px;
+    }
+
+    .card-back {
+        transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        color: #ddd;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>PrepPal</h1>
+    <button id="logoutBtn">Logout</button>
+</header>
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for a course...">
+</div>
+
+<div class="course-container" id="courseContainer">
+    <!-- Courses will load here -->
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

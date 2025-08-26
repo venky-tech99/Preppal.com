@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Series Test — LearnHub</title>
+  <style>
+    :root{
+      --orange:#ff8c00;
+      --blue:#0096FF;
+      --white:#ffffff;
+      --accent:#003f7f;
+      --green:#27ae60;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Segoe UI,Arial,Helvetica,sans-serif}
+    body{min-height:100vh;background:linear-gradient(120deg,var(--orange),var(--blue),var(--white));display:flex;flex-direction:column;color:#072b3a}
+    header{background:rgba(0,0,0,0.6);color:var(--orange);padding:16px;text-align:center;font-weight:700}
+    .wrap{max-width:1100px;margin:18px auto;padding:18px;background:rgba(255,255,255,0.95);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.12);display:flex;flex-direction:column;gap:12px}
+    .top{display:flex;justify-content:space-between;align-items:center}
+    .title{font-weight:800;color:var(--accent)}
+    #timer{font-weight:800;color:#c0392b;background:rgba(0,0,0,0.04);padding:8px 12px;border-radius:8px}
+    .card{background:linear-gradient(180deg,#fff,#f7fbff);padding:16px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+    .qnum{font-weight:700;color:#133a57;margin-bottom:6px}
+    .qtext{font-size:1.05rem;margin-bottom:12px;color:#0b2340}
+    .options{display:flex;flex-direction:column;gap:10px}
+    .optrow{display:flex;gap:10px;align-items:center;background:#fff;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;transition:all .12s}
+    .optrow:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.04)}
+    .optrow input{accent-color:var(--accent);margin-right:10px}
+    .controls{display:flex;justify-content:space-between;align-items:center;margin-top:12px;gap:8px}
+    .left-controls{display:flex;gap:8px}
+    button.btn{padding:10px 16px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
+    button.btn.back{background:#7f8c8d;color:#fff}
+    button.btn.next{background:var(--accent);color:#fff}
+    button.btn.submit{background:var(--green);color:#fff}
+    .numbers{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+    .num{width:36px;height:36px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--green);color:#fff;font-weight:800;cursor:pointer;border:2px solid rgba(0,0,0,0.06);transition:transform .12s}
+    .num:hover{transform:translateY(-3px)}
+    .num.active{outline:3px solid rgba(0,86,179,0.12);box-shadow:0 8px 20px rgba(0,0,0,0.06)}
+    #results{display:none;background:#fff;border-radius:10px;padding:14px;box-shadow:0 8px 30px rgba(0,0,0,0.08);max-height:60vh;overflow:auto}
+    .score{font-size:1.25rem;font-weight:800;color:var(--accent);margin-bottom:12px}
+    .wrong{background:#fff3f2;border-left:4px solid #e74c3c;padding:10px;margin-bottom:10px;border-radius:8px}
+    .correct{background:#f0fff4;border-left:4px solid #27ae60;padding:10px;margin-bottom:10px;border-radius:8px}
+    @media (max-width:820px){.num{width:30px;height:30px;font-size:.9rem}}
+  </style>
+</head>
+<body>
+  <header>Series Test — 100 Questions (1 min per question)</header>
+
+  <main class="wrap">
+    <div class="top">
+      <div class="title">Series — Timed MCQ Test</div>
+      <div id="timer">Time left: 60s</div>
+    </div>
+
+    <section class="card" id="questionCard">
+      <div class="qnum" id="qnum">Q1 / 100</div>
+      <div class="qtext" id="qtext">Loading question...</div>
+
+      <div class="options" id="options">
+        <!-- options injected here -->
+      </div>
+
+      <div class="controls">
+        <div class="left-controls">
+          <button class="btn back" id="prevBtn">Back</button>
+          <button class="btn next" id="nextBtn">Next</button>
+        </div>
+        <div>
+          <button class="btn submit" id="submitBtn">Submit</button>
+        </div>
+      </div>
+
+      <div class="numbers" id="numbers"></div>
+    </section>
+
+    <section id="results">
+      <div class="score" id="scoreText"></div>
+      <div id="details"></div>
+    </section>
+  </main>
+
+  <script src="seriestest.js"></script>
+</body>
+</html>

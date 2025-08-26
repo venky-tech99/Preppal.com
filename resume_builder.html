@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PrepPal — Resume Builder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0b7cff;
+      --accent-2:#ff7a00;
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;background:var(--bg);font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#0f172a;
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+    }
+
+    .wrap{max-width:var(--maxw);margin:20px auto;padding:18px;display:grid;grid-template-columns:380px 1fr;gap:18px}
+    @media (max-width:980px){.wrap{grid-template-columns:1fr;padding:12px}}
+    /* left panel (form) */
+    .panel{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(15,23,42,0.06);height:calc(100vh - 60px);overflow:auto}
+    .panel h2{margin:0 0 12px;font-size:18px}
+    label{display:block;margin-top:10px;font-size:13px;color:var(--muted)}
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select{
+      width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefc;margin-top:6px;font-size:14px;
+      background:#fcfdff;
+    }
+    textarea{min-height:70px;resize:vertical}
+    .row{display:flex;gap:10px}
+    .small{font-size:13px;color:var(--muted)}
+    .actions{display:flex;gap:10px;margin-top:12px}
+    .btn{padding:10px 12px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+    .btn.primary{background:var(--accent);color:white;box-shadow:0 8px 20px rgba(11,124,255,0.12)}
+    .btn.ghost{background:white;border:1px solid #e6eefc;color:var(--accent)}
+    .template-toggle{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .template-item{padding:8px 10px;border-radius:8px;border:1px solid #eef6ff;background:white;cursor:pointer}
+    .template-item.active{border-color:var(--accent);box-shadow:0 6px 18px rgba(11,124,255,0.08)}
+
+    /* right (preview) */
+    .preview-wrap{display:flex;flex-direction:column;gap:12px;height:calc(100vh - 60px);overflow:auto}
+    .preview-actions{display:flex;justify-content:space-between;gap:10px}
+    .preview-container{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(15,23,42,0.06)}
+    /* Template: Sidebar style */
+    .cv-sidebar{
+      display:grid;grid-template-columns:220px 1fr;gap:18px;max-width:900px;margin:auto;background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:10px;
+      border:1px solid #eef6ff;
+    }
+    .cv-left{background:linear-gradient(180deg,#0b7cff,#00c2ff);color:white;padding:16px;border-radius:8px;display:flex;flex-direction:column;gap:10px;align-items:center}
+    .cv-photo{width:120px;height:120px;border-radius:8px;background:#e6f6ff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .cv-photo img{width:100%;height:100%;object-fit:cover}
+    .cv-name{font-size:20px;font-weight:700;margin-top:6px;text-align:center}
+    .cv-role{font-size:13px;opacity:0.95}
+    .cv-contact{font-size:13px;background:rgba(255,255,255,.06);padding:10px;border-radius:8px;width:100%;text-align:center}
+    .cv-right{padding:6px}
+    .section-title{display:flex;align-items:center;gap:8px;margin-top:6px;margin-bottom:6px}
+    .section-title h4{margin:0;font-size:14px;color:#0b2340}
+    .skill-pill{display:inline-block;background:#f1f8ff;color:var(--accent);padding:6px 8px;border-radius:8px;margin:4px 4px 0 0;font-weight:600;font-size:13px}
+
+    /* Template: Classic style */
+    .cv-classic{max-width:900px;margin:auto;background:white;padding:28px;border-radius:10px;border:1px solid #eef6ff}
+    .classic-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eef6ff;padding-bottom:10px;margin-bottom:12px}
+    .classic-name{font-size:24px;font-weight:800}
+    .classic-contact{color:var(--muted);font-size:13px}
+    .classic-section{margin-top:12px}
+    .classic-section h4{margin:0 0 6px;color:var(--accent)}
+    .item-row{display:flex;justify-content:space-between;gap:12px}
+    .item-left{flex:1}
+    .item-right{flex:1;text-align:right;color:var(--muted);font-size:13px}
+
+    /* helper */
+    .muted{color:var(--muted);font-size:13px}
+    .small-note{font-size:13px;color:#64748b;margin-top:8px}
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <!-- LEFT: FORM -->
+  <div class="panel" id="formPanel">
+    <h2>Build your resume</h2>
+
+    <label>Choose template</label>
+    <div class="template-toggle" id="templateToggle">
+      <div class="template-item active" data-tem="sidebar">Sidebar (Modern)</div>
+      <div class="template-item" data-tem="classic">Classic</div>
+    </div>
+
+    <label>Full Name</label>
+    <input id="name" type="text" placeholder="e.g. Venky Kumar">
+
+    <label>Role / Title</label>
+    <input id="role" type="text" placeholder="e.g. Software Engineer">
+
+    <div class="row">
+      <div style="flex:1">
+        <label>Email</label>
+        <input id="email" type="email" placeholder="you@example.com">
+      </div>
+      <div style="width:120px">
+        <label>Phone</label>
+        <input id="phone" type="tel" placeholder="+91 9XXXXXXXXX">
+      </div>
+    </div>
+
+    <label>Location</label>
+    <input id="location" type="text" placeholder="City, State, Country">
+
+    <label>LinkedIn / Portfolio (one line)</label>
+    <input id="link" type="text" placeholder="linkedin.com/in/yourname">
+
+    <label>Upload Photo (optional)</label>
+    <input id="photo" type="file" accept="image/*">
+
+    <label>Profile Summary</label>
+    <textarea id="summary" placeholder="Short 2-3 line professional summary"></textarea>
+
+    <label>Skills (comma separated)</label>
+    <input id="skills" type="text" placeholder="JavaScript, React, Node.js, SQL">
+
+    <label>Education (one per line: Degree | Institute | Year)</label>
+    <textarea id="education" placeholder="B.Tech Computer Science | XYZ University | 2024"></textarea>
+
+    <label>Projects (title — short description — tech)</label>
+    <textarea id="projects" placeholder="Project1 — built X using Y..."></textarea>
+
+    <label>Experience (title — company — period — bullets)</label>
+    <textarea id="experience" placeholder="Intern — ABC Corp — Jun 2023 - Aug 2023 — Worked on..."></textarea>
+
+    <label>Certifications / Achievements (one per line)</label>
+    <textarea id="achievements" placeholder="Certificate — Issuer — Year"></textarea>
+
+    <div class="actions">
+      <button class="btn primary" id="downloadPdfBtn">Download PDF</button>
+      <button class="btn ghost" id="resetBtn" title="Reset form">Reset</button>
+    </div>
+
+    <div class="small-note">Tip: Fill details then switch templates to preview both looks. PDF will be generated from the currently selected template view.</div>
+  </div>
+
+  <!-- RIGHT: PREVIEW -->
+  <div class="preview-wrap">
+    <div class="preview-actions">
+      <div class="small muted">Preview (live)</div>
+      <div>
+        <button class="btn ghost" id="previewSizeBtn">A4 / Screen</button>
+      </div>
+    </div>
+
+    <div class="preview-container" id="previewContainer">
+      <!-- Sidebar template preview -->
+      <div id="templateSidebar" class="cv-sidebar" style="">
+        <div class="cv-left">
+          <div class="cv-photo" id="previewPhotoBox">
+            <!-- photo inserted here -->
+            <div id="previewPhotoDefault" style="padding:6px;color:#003b6f;font-weight:700">PHOTO</div>
+          </div>
+          <div class="cv-name" id="previewName">Your Name</div>
+          <div class="cv-role" id="previewRole">Role / Title</div>
+          <div class="cv-contact" id="previewContact">
+            <div id="previewEmail">email@example.com</div>
+            <div id="previewPhone">+91 XXXXX</div>
+            <div id="previewLocation">City,Country</div>
+            <div id="previewLink">linkedin.com/you</div>
+          </div>
+        </div>
+        <div class="cv-right">
+          <div class="section-title"><h4>Summary</h4></div>
+          <div id="previewSummary" class="muted">Short professional summary...</div>
+
+          <div class="section-title"><h4>Skills</h4></div>
+          <div id="previewSkills"></div>
+
+          <div class="section-title"><h4>Education</h4></div>
+          <div id="previewEducation" class="muted"></div>
+
+          <div class="section-title"><h4>Projects</h4></div>
+          <div id="previewProjects" class="muted"></div>
+
+          <div class="section-title"><h4>Experience</h4></div>
+          <div id="previewExperience" class="muted"></div>
+
+          <div class="section-title"><h4>Achievements</h4></div>
+          <div id="previewAchievements" class="muted"></div>
+        </div>
+      </div>
+
+      <!-- Classic template preview (hidden by default) -->
+      <div id="templateClassic" class="cv-classic" style="display:none">
+        <div class="classic-header">
+          <div>
+            <div class="classic-name" id="classicName">Your Name</div>
+            <div class="classic-contact" id="classicRole">Role • City</div>
+          </div>
+          <div style="text-align:right">
+            <div id="classicContact" class="classic-contact">email • phone • link</div>
+          </div>
+        </div>
+
+        <div class="classic-section">
+          <h4>Profile</h4>
+          <div id="classicSummary" class="muted">Short summary...</div>
+        </div>
+
+        <div class="classic-section">
+          <h4>Skills</h4>
+          <div id="classicSkills"></div>
+        </div>
+
+        <div class="classic-section">
+          <h4>Education</h4>
+          <div id="classicEducation" class="muted"></div>
+        </div>
+
+        <div class="classic-section">
+          <h4>Projects</h4>
+          <div id="classicProjects" class="muted"></div>
+        </div>
+
+        <div class="classic-section">
+          <h4>Experience</h4>
+          <div id="classicExperience" class="muted"></div>
+        </div>
+
+        <div class="classic-section">
+          <h4>Certifications & Achievements</h4>
+          <div id="classicAchievements" class="muted"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- html2pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script src="resume_builder.js"></script>
+</body>
+</html>

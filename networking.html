@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Networking Topics</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg, #007BFF, #28A745, #FF851B, #ffffff);
+        background-size: 400% 400%;
+        animation: gradientBG 12s ease infinite;
+        color: white;
+        text-align: center;
+    }
+    @keyframes gradientBG {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+    header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+    header button {
+        background: white;
+        color: black;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    h1 {
+        margin-top: 10px;
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+    .topic-container {
+        max-width: 700px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+    .topic {
+        background: rgba(255,255,255,0.1);
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    .topic:hover {
+        background: rgba(255,255,255,0.2);
+        transform: scale(1.03);
+    }
+    .topic h2 {
+        margin: 0 0 10px 0;
+    }
+    .btn-container button {
+        background: white;
+        border: none;
+        color: black;
+        padding: 8px 15px;
+        border-radius: 5px;
+        margin: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .btn-container button:hover {
+        background: #FFD700;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <button onclick="window.location.href='dashboard.html'">&larr; Back</button>
+</header>
+
+<h1>Networking</h1>
+
+<div class="topic-container">
+    <div class="topic">
+        <h2>OSI Model</h2>
+        <div class="btn-container">
+            <button onclick="window.location.href='osi-learn.html'">Learn</button>
+            <button onclick="window.location.href='osimodeltest.html'">Take Test</button>
+        </div>
+    </div>
+    <div class="topic">
+        <h2>TCP/IP Model</h2>
+        <div class="btn-container">
+            <button onclick="window.location.href='tcpip-learn.html'">Learn</button>
+            <button onclick="window.location.href='tcpiptest.html'">Take Test</button>
+        </div>
+    </div>
+    <div class="topic">
+        <h2>Networking Devices</h2>
+        <div class="btn-container">
+            <button onclick="window.location.href='devices-learn.html'">Learn</button>
+            <button onclick="window.location.href='devicestest.html'">Take Test</button>
+        </div>
+    </div>
+    <div class="topic">
+        <h2>IP Addressing & Subnetting</h2>
+        <div class="btn-container">
+            <button onclick="window.location.href='ip-learn.html'">Learn</button>
+            <button onclick="window.location.href='iptest.html'">Take Test</button>
+        </div>
+    </div>
+    <div class="topic">
+        <h2>Network Protocols</h2>
+        <div class="btn-container">
+            <button onclick="window.location.href='protocols-learn.html'">Learn</button>
+            <button onclick="window.location.href='protocolstest.html'">Take Test</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

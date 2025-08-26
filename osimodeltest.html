@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OSI Model Test - PrepPal</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, red, blue, green, pink);
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #timer {
+        font-size: 18px;
+        text-align: right;
+        margin-bottom: 10px;
+    }
+    .question {
+        background: rgba(0, 0, 0, 0.4);
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+    .options label {
+        display: block;
+        margin: 8px 0;
+        cursor: pointer;
+    }
+    .navigation {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    .nav-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: none;
+        background: green;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .btn-row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        background: orange;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    #result {
+        margin-top: 20px;
+        padding: 15px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>OSI Model Test</h1>
+    <div id="timer">Time Left: <span id="time">60</span>s</div>
+
+    <div id="question-container"></div>
+
+    <div class="btn-row">
+        <button onclick="prevQuestion()">Back</button>
+        <button onclick="nextQuestion()">Next</button>
+        <button onclick="submitTest()">Submit</button>
+    </div>
+
+    <div class="navigation" id="nav-buttons"></div>
+
+    <div id="result"></div>
+</div>
+<script src="osimodeltest.js"></script>
+</body>
+</html>

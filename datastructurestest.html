@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures Test - PrepPal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #2193b0, #6dd5ed);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        .options {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .options label:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .back-btn { background-color: #f44336; color: white; }
+        .next-btn { background-color: #4CAF50; color: white; }
+        .submit-btn { background-color: #2196F3; color: white; }
+        button:hover { opacity: 0.8; }
+        #timer {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: yellow;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>PrepPal - Data Structures Test</header>
+
+    <div class="container">
+        <div id="timer">Time left: 60s</div>
+        <div id="question-container"></div>
+
+        <div class="buttons">
+            <button class="back-btn" onclick="prevQuestion()">Back</button>
+            <button class="next-btn" onclick="nextQuestion()">Next</button>
+            <button class="submit-btn" onclick="submitTest()">Submit</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="datastructurestest.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IP Addressing & Subnetting Test</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg, orange, white, blue);
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        color: #003366;
+        margin-bottom: 10px;
+    }
+    #timer {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #ff6600;
+    }
+    .question-container {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        max-width: 700px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .options {
+        margin-top: 10px;
+    }
+    .options label {
+        display: block;
+        background: #f0f8ff;
+        margin: 6px 0;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+    }
+    .navigation {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+    .nav-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: none;
+        background-color: green;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .controls {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .controls button {
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .next-btn { background: blue; color: white; }
+    .back-btn { background: orange; color: white; }
+    .submit-btn { background: red; color: white; }
+    #result {
+        margin-top: 20px;
+        padding: 15px;
+        background: #fff3cd;
+        border-radius: 8px;
+        max-width: 700px;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+
+<h1>IP Addressing & Subnetting Test</h1>
+<div id="timer">Time Left: 01:00</div>
+
+<div class="question-container">
+    <div id="question">Loading question...</div>
+    <div class="options" id="options"></div>
+</div>
+
+<div class="navigation" id="navigation"></div>
+
+<div class="controls">
+    <button class="back-btn" onclick="prevQuestion()">Back</button>
+    <button class="next-btn" onclick="nextQuestion()">Next</button>
+    <button class="submit-btn" onclick="submitTest()">Submit</button>
+</div>
+
+<div id="result"></div>
+
+<script src="iptest.js"></script>
+</body>
+</html>

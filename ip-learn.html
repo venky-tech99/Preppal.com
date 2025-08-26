@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>IP Addressing — PrepPal</title>
+<style>
+  :root{--accent:#ff8a00;--blue:#0b79d0;--bg:#fffdf9;--muted:#4a5560}
+  body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#fffdf9,#eef8ff);color:#0f1720}
+  header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(255,138,0,0.04)}
+  .wrap{max-width:1100px;margin:20px auto;padding:16px}
+  .card{background:#fff;padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(11,21,40,0.04)}
+  .row{display:flex;gap:16px}
+  .box{flex:1}
+  pre{background:#f6f9ff;padding:10px;border-radius:8px;border:1px solid #eef6ff}
+  .btn{padding:10px 12px;border-radius:8px;border:0;background:var(--blue);color:#fff;cursor:pointer}
+  .calc{margin-top:12px;padding:12px;border-radius:8px;background:#fff9f0;border:1px solid #fff0e6}
+  table{width:100%;border-collapse:collapse;margin-top:10px}
+  th,td{padding:8px;border-bottom:1px solid #f2f6f9}
+  @media(max-width:980px){.row{flex-direction:column}}
+</style>
+</head>
+<body>
+<header><h1 style="color:var(--blue);margin:0">IP Addressing & Subnetting</h1>
+  <div style="display:flex;gap:8px">
+    <button class="btn" onclick="location.href='networking-devices.html'">← Prev</button>
+    <button class="btn" onclick="location.href='networking.html'">Back</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="card">
+    <h2 style="color:var(--accent);margin:0 0 8px 0">IPv4 Essentials</h2>
+    <p style="color:var(--muted)">IPv4 addresses are 32-bit numbers written as dotted-decimal (e.g., 192.168.1.0). Subnet masks split network and host portions (e.g., /24 = 255.255.255.0).</p>
+
+    <div class="row" style="margin-top:12px">
+      <div class="box">
+        <h3>How subnetting works</h3>
+        <p class="desc">Given network 192.168.10.0/24, dividing into /26 gives subnets with 64 addresses (62 usable). CIDR notation /n indicates n bits for network prefix.</p>
+        <pre>Example:
+/24 → hosts per subnet = 2^(32-24) = 256 (254 usable)
+/26 → hosts = 2^(32-26) = 64 (62 usable)</pre>
+      </div>
+
+      <div class="box">
+        <h3>Common commands</h3>
+        <pre>Linux:
+ip addr show
+ip route show
+ping 8.8.8.8
+ifconfig (older)</pre>
+      </div>
+    </div>
+
+    <div class="calc">
+      <strong>Quick calculation</strong>
+      <p style="margin-top:8px;color:var(--muted)">Question: How many hosts in /27? Answer: 2^(32-27) = 32 addresses (30 usable).</p>
+    </div>
+
+    <h3 style="margin-top:12px">IPv6 basics</h3>
+    <p class="desc">IPv6 uses 128-bit addresses; colon-hex notation (e.g., 2001:0db8::1). No NAT required; much larger address space.</p>
+
+    <div style="margin-top:12px;background:#f1fbff;padding:10px;border-radius:8px">
+      <strong>Interview Qs</strong>
+      <ol style="margin:8px 0 0 16px;color:var(--muted)">
+        <li>Explain how to subnet 10.0.0.0/24 into four equal parts.</li>
+        <li>Why is CIDR preferred over classful addressing?</li>
+        <li>Explain difference between public and private IPs.</li>
+      </ol>
+    </div>
+
+    <div style="display:flex;gap:10px;margin-top:12px">
+      <button class="btn" onclick="location.href='ip-addressing.html#'">Practice in CLI</button>
+      <button class="btn" onclick="location.href='network-protocols.html'">Next: Protocols →</button>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

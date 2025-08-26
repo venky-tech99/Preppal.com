@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Protocols Test</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, orange, white, skyblue);
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: orange;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        font-size: 1.5em;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        background: rgba(255,255,255,0.9);
+        border-radius: 10px;
+    }
+    .question {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .options label {
+        display: block;
+        margin: 5px 0;
+        padding: 8px;
+        background: #f0f0f0;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .options label:hover {
+        background: #d0eaff;
+    }
+    .nav-buttons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: orange;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+        font-size: 1em;
+        transition: background 0.3s;
+    }
+    button:hover {
+        background-color: darkorange;
+    }
+    .number-nav {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+    }
+    .number-nav button {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: green;
+        color: white;
+        font-weight: bold;
+    }
+    .timer {
+        text-align: right;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: blue;
+    }
+    .result {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 5px;
+        background: #fff3cd;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<header>Protocols Test</header>
+<div class="container">
+    <div class="timer" id="timer">Time Left: 60s</div>
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div>
+    <div class="nav-buttons">
+        <button onclick="prevQuestion()">Back</button>
+        <button onclick="nextQuestion()">Next</button>
+        <button onclick="submitTest()">Submit</button>
+    </div>
+    <div class="number-nav" id="numberNav"></div>
+    <div class="result" id="result"></div>
+</div>
+
+<script src="protocolstest.js"></script>
+</body>
+</html>

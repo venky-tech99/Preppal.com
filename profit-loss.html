@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profit & Loss | LearnHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #d4af37, #c0c0c0, #e5e4e2); /* Gold, Silver, Platinum */
+      color: #222;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #d97706;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .example {
+      background: #fdf6e3;
+      border-left: 5px solid #f59e0b;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 6px;
+    }
+
+    .example a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .buttons a button {
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background-color: #d97706;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .buttons a button:hover {
+      background-color: #b45309;
+    }
+
+    @media (max-width: 600px) {
+      .buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>Profit & Loss - Quantitative Aptitude</header>
+
+  <div class="container">
+    <h2>What is Profit & Loss?</h2>
+    <p>Profit and Loss refers to the gain or loss made in a transaction. It’s used widely in business to calculate whether the seller made a profit or incurred a loss.</p>
+
+    <h2>Basic Terminologies:</h2>
+    <p><strong>Cost Price (CP):</strong> The amount paid to buy an item.</p>
+    <p><strong>Selling Price (SP):</strong> The amount received from selling the item.</p>
+    <p><strong>Profit:</strong> SP - CP (when SP &gt; CP)</p>
+    <p><strong>Loss:</strong> CP - SP (when CP &gt; SP)</p>
+
+    <h2>Formulas:</h2>
+    <ul>
+      <li>Profit % = (Profit / CP) × 100</li>
+      <li>Loss % = (Loss / CP) × 100</li>
+      <li>SP = CP × (1 + Profit%)</li>
+      <li>SP = CP × (1 - Loss%)</li>
+    </ul>
+
+    <h2>Practice Questions with Detailed Solutions</h2>
+
+    <div class="example">
+      <strong>Q1:</strong> A man buys a mobile phone for ₹10,000 and sells it for ₹12,000. Find the profit and profit percentage.<br><br>
+      <strong>Solution:</strong><br>
+      Cost Price (CP) = ₹10,000<br>
+      Selling Price (SP) = ₹12,000<br>
+      Profit = SP - CP = ₹2,000<br>
+      Profit % = (2000 / 10000) × 100 = 20%<br><br>
+      📺 <a href="https://www.youtube.com/watch?v=rIq2HG6Fz30" target="_blank">Watch Explanation Video</a>
+    </div>
+
+    <div class="example">
+      <strong>Q2:</strong> A shopkeeper incurs a loss of 15% by selling an article for ₹170. What was its cost price?<br><br>
+      <strong>Solution:</strong><br>
+      SP = ₹170, Loss% = 15%<br>
+      CP = SP / (1 - Loss%) = 170 / (0.85) = ₹200<br><br>
+      📺 <a href="https://www.youtube.com/watch?v=UpeKQpnA9zA" target="_blank">Watch Explanation Video</a>
+    </div>
+
+    <div class="example">
+      <strong>Q3:</strong> A person wants to earn a 25% profit. If the cost price of an item is ₹240, at what price should it be sold?<br><br>
+      <strong>Solution:</strong><br>
+      CP = ₹240, Profit% = 25%<br>
+      SP = CP × (1 + Profit%) = 240 × 1.25 = ₹300<br><br>
+      📺 <a href="https://www.youtube.com/watch?v=ny6N59xI9Ck" target="_blank">Watch Explanation Video</a>
+    </div>
+
+    <div class="buttons">
+      <a href="quantitative.html"><button>Back</button></a>
+      <a href="profit-losstest.html"><button>Test</button></a>
+      <a href="speed-distance.html"><button>Next</button></a>
+      
+    </div>
+  </div>
+
+</body>
+</html>

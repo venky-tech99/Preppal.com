@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Advanced Interview Training — PrepPal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#0b7cff;
+    --accent-dark:#055bb5;
+    --muted:#6b7280;
+    --card:#ffffff;
+    --bg:#f4f7fb;
+    --glass: rgba(255,255,255,0.6);
+    --maxwidth:1200px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+    background:linear-gradient(180deg,#f7fbff 0%, #f4f7fb 100%);
+    color:#0f172a;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+
+  /* Container */
+  .site {
+    max-width: var(--maxwidth);
+    margin: 28px auto;
+    padding: 0 18px;
+  }
+
+  /* HERO */
+  .hero {
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+    margin-bottom:18px;
+  }
+  .hero-left {
+    flex:1 1 65%;
+    background: linear-gradient(135deg,#eef6ff, #ffffff);
+    border-radius:12px;
+    padding:28px;
+    box-shadow: 0 6px 24px rgba(13,42,66,0.06);
+  }
+  .badge {
+    display:inline-block;
+    background:linear-gradient(90deg,#0b7cff,#00c2ff);
+    color:white;
+    padding:8px 12px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:13px;
+    margin-bottom:12px;
+  }
+  .hero h1 {
+    margin: 6px 0 8px;
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:-0.2px;
+  }
+  .meta {
+    color:var(--muted);
+    margin-bottom:18px;
+  }
+  .hero .preview {
+    position:relative;
+    border-radius:12px;
+    overflow:hidden;
+    margin-top:16px;
+  }
+  .preview img{width:100%;height:auto;display:block}
+  .play {
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(180deg,rgba(3,37,75,0.15),rgba(3,37,75,0.1));
+  }
+  .play button{
+    background:var(--accent);
+    border:none;
+    color:white;
+    padding:14px 18px;
+    border-radius:999px;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(11,124,255,0.2);
+  }
+  .hero p.lead {margin:14px 0 0;color:#334155}
+
+  /* RIGHT SIDEBAR */
+  .sidebar {
+    width:340px;
+    flex: 0 0 340px;
+    position:sticky;
+    top:20px;
+    height:fit-content;
+    align-self:flex-start;
+  }
+  .card {
+    background:var(--card);
+    border-radius:12px;
+    padding:18px;
+    box-shadow:0 10px 30px rgba(11,22,33,0.05);
+  }
+  .price {
+    font-size:22px;
+    font-weight:700;
+    color:var(--accent-dark);
+  }
+  .small {color:var(--muted);font-size:14px}
+  .enroll {
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+  }
+  .btn {
+    background:var(--accent);
+    color:white;
+    border:none;
+    padding:12px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    flex:1;
+    font-weight:600;
+    box-shadow:0 8px 28px rgba(11,124,255,0.12);
+  }
+  .outline {
+    border:1px solid #e6eefc;
+    background:white;
+    color:var(--accent-dark);
+    padding:12px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    flex:1;
+  }
+
+  .badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .pill {padding:6px 8px;background:#f1f8ff;border-radius:6px;color:var(--accent-dark);font-weight:600;font-size:13px}
+
+  /* Grid below hero (content + sidebar stacked below for small screens) */
+  .layout {
+    display:grid;
+    grid-template-columns:1fr 340px;
+    gap:24px;
+    margin-top:20px;
+  }
+  .main {
+    min-height:200px;
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom:22px;
+  }
+  .section h3{margin:0 0 10px;font-size:18px}
+  .card .meta-row {display:flex;justify-content:space-between;align-items:center}
+  .curriculum .chapter {margin-bottom:12px}
+  .chapter .ch-head {
+    display:flex;justify-content:space-between;align-items:center;
+    background:#fbfdff;padding:12px;border-radius:8px;border:1px solid #eef6ff;cursor:pointer;
+  }
+  .ch-body {padding:12px;background:linear-gradient(180deg,#ffffff,#fbfdff);border-radius:8px;margin-top:8px;border:1px solid #eef6ff}
+
+  /* instructor */
+  .instructor {
+    display:flex;gap:12px;align-items:center;
+  }
+  .avatar {width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,#e6f2ff,#fff);display:flex;justify-content:center;align-items:center;font-weight:700;color:var(--accent);font-size:18px}
+  .instructor .info {font-size:14px}
+  .instructor .info .name{font-weight:700;color:#0b2337}
+
+  /* reviews */
+  .reviews {display:flex;gap:12px;flex-wrap:wrap}
+  .review {background:white;padding:12px;border-radius:8px;flex:1;min-width:240px;box-shadow:0 6px 18px rgba(11,22,33,0.04)}
+
+  /* FAQ */
+  .faq-item {margin-bottom:10px;border-radius:8px;overflow:hidden}
+  .faq-q {display:flex;justify-content:space-between;align-items:center;padding:14px;background:#fff;border:1px solid #eef6ff;cursor:pointer}
+  .faq-a {display:none;padding:14px;background:#fbfdff;border-left:1px solid #eef6ff;border-right:1px solid #eef6ff;border-bottom:1px solid #eef6ff}
+
+  /* responsive */
+  @media (max-width:960px){
+    .hero {flex-direction:column}
+    .sidebar{position:static;width:100%}
+    .layout {grid-template-columns:1fr}
+    .badge {font-size:12px}
+    .hero h1{font-size:22px}
+  }
+  @media (max-width:520px){
+    .hero-left{padding:18px}
+    .card{padding:12px}
+    .play button{padding:12px 14px}
+  }
+
+  /* tiny style niceties */
+  .muted{color:var(--muted);font-size:14px}
+  a.link{color:var(--accent);text-decoration:none;font-weight:600}
+  .small-space{margin-top:8px}
+</style>
+</head>
+<body>
+
+<div class="site">
+
+  <!-- HERO (big banner with preview) -->
+  <div class="hero">
+    <div class="hero-left card">
+      <span class="badge">PrepPal • Interview Course</span>
+      <h1>Advanced Interview Training — Ace Technical & HR Rounds</h1>
+      <div class="meta small muted">
+        12 hours • 6 modules • 150+ practice questions • Includes mock interviews & templates
+      </div>
+
+      <p class="lead">Master the full interview flow — behavioral, technical problem solving, system design basics, communication skills, and live mock interviews with feedback. Built for placement success.</p>
+
+      <div class="preview" aria-hidden="false">
+        <img src="https://images.unsplash.com/photo-1520975698512-0b2b8e9f0ddd?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1c3d5b27b2bf1a9b8c2e0f1877d5e1f0" alt="Course preview">
+        <div class="play">
+          <button id="openPreview"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-6.516-3.75A1 1 0 006 8.246v7.508a1 1 0 001.236.97l6.516-1.46a1 1 0 00.744-.97V12.14a1 1 0 00-.744-.972z"/></svg> Play preview</button>
+        </div>
+      </div>
+
+      <!-- short bullets -->
+      <div class="small-space small muted">
+        <strong>What you'll learn:</strong>
+        <ul style="margin:8px 0 0 18px;color:#24303b">
+          <li>Structured problem solving & coding patterns</li>
+          <li>Mock interviews & feedback templates</li>
+          <li>Behavioral answers with STAR framework</li>
+          <li>Resume and HR negotiation tips</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="card">
+        <div class="meta-row">
+          <div>
+            <div class="small">Course Price</div>
+            <div class="price">₹499 <span style="font-size:12px;color:var(--muted);font-weight:600"> (limited offer)</span></div>
+          </div>
+          <div style="text-align:right">
+            <div class="small">Level</div>
+            <div style="font-weight:700">Intermediate</div>
+          </div>
+        </div>
+
+        <div class="badge-row">
+          <div class="pill">Mock Interviews</div>
+          <div class="pill">150+ Questions</div>
+          <div class="pill">Certificate</div>
+        </div>
+
+        <div class="enroll">
+          <button class="btn" id="enrollBtn">Enroll now</button>
+          <button class="outline" id="wishlistBtn">Save</button>
+        </div>
+
+        <div style="margin-top:12px" class="small muted">
+          <div>30-day money-back guarantee • Lifetime access</div>
+        </div>
+      </div>
+
+      <div style="height:12px"></div>
+
+      <div class="card">
+        <div class="small muted">Includes</div>
+        <ul style="margin:8px 0 0 18px;color:#24303b">
+          <li>12 hours on-demand video</li>
+          <li>Downloadable resources</li>
+          <li>Quizzes & assignments</li>
+        </ul>
+      </div>
+    </aside>
+  </div> <!-- hero -->
+
+  <!-- MAIN LAYOUT: content + sidebar (same sidebar reused) -->
+  <div class="layout">
+    <main class="main">
+
+      <!-- Curriculum -->
+      <div class="section card curriculum">
+        <h3>Curriculum</h3>
+
+        <div class="chapter" data-chapter="1">
+          <div class="ch-head">
+            <div><strong>Module 1</strong> • Interview Foundations</div>
+            <div class="muted">10 lessons • 1h</div>
+          </div>
+          <div class="ch-body" style="display:block">
+            <ul style="margin:0;padding-left:18px">
+              <li>Introduction + roadmap</li>
+              <li>How interviews are evaluated</li>
+              <li>Resume and profile audit</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="chapter" data-chapter="2">
+          <div class="ch-head">
+            <div><strong>Module 2</strong> • Behavior & STAR</div>
+            <div class="muted">8 lessons • 1.5h</div>
+          </div>
+          <div class="ch-body" style="display:none">
+            <ul style="margin:0;padding-left:18px">
+              <li>STAR method deep dive</li>
+              <li>Behavioral examples & templates</li>
+              <li>Mock HR rounds</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="chapter" data-chapter="3">
+          <div class="ch-head">
+            <div><strong>Module 3</strong> • Problem Solving Patterns</div>
+            <div class="muted">20 lessons • 4h</div>
+          </div>
+          <div class="ch-body" style="display:none">
+            <ul style="margin:0;padding-left:18px">
+              <li>Two-pointers, sliding window</li>
+              <li>Recursion & backtracking</li>
+              <li>Hashing & frequency maps</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="chapter" data-chapter="4">
+          <div class="ch-head">
+            <div><strong>Module 4</strong> • System Design Basics</div>
+            <div class="muted">6 lessons • 1.5h</div>
+          </div>
+          <div class="ch-body" style="display:none">
+            <ul style="margin:0;padding-left:18px">
+              <li>Design interview checklist</li>
+              <li>Scalable architecture quickcards</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="chapter" data-chapter="5">
+          <div class="ch-head">
+            <div><strong>Module 5</strong> • Mock Interviews</div>
+            <div class="muted">Live & recorded • 2 sessions</div>
+          </div>
+          <div class="ch-body" style="display:none">
+            <ul style="margin:0;padding-left:18px">
+              <li>Mock technical round</li>
+              <li>Mock HR & feedback</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Instructor -->
+      <div class="section card">
+        <h3>Instructor</h3>
+        <div class="instructor">
+          <div class="avatar">JP</div>
+          <div class="info">
+            <div class="name">Jay Patel — Senior Interview Coach</div>
+            <div class="small muted">Ex-FAANG hiring manager • 12+ years coaching students</div>
+            <div style="margin-top:8px"><a class="link" href="#">View full profile</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews -->
+      <div class="section card">
+        <h3>Student reviews</h3>
+        <div class="reviews">
+          <div class="review">
+            <div style="font-weight:700">"Helped me land 3 interviews"</div>
+            <div class="small muted">— Priya, 2025 Batch</div>
+            <p style="margin-top:8px">Clear templates and mock interview were a game-changer. Practical feedback helped me improve.</p>
+          </div>
+          <div class="review">
+            <div style="font-weight:700">"Excellent strategies for problem solving"</div>
+            <div class="small muted">— Rohit</div>
+            <p style="margin-top:8px">The problem patterns and guided practice were excellent. Highly recommend.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section card">
+        <h3>Frequently asked questions</h3>
+
+        <div class="faq-item">
+          <div class="faq-q">Who is this course for? <span class="muted">▾</span></div>
+          <div class="faq-a">This course suits final-year students and early-career professionals preparing for placement interviews — both technical and HR rounds.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Do you provide mock interviews? <span class="muted">▾</span></div>
+          <div class="faq-a">Yes — the course includes recorded mock interviews plus templates and scoring checklists.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Will I get a certificate? <span class="muted">▾</span></div>
+          <div class="faq-a">Yes — a completion certificate is available after finishing the course and passing the final assessment.</div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- sidebar repeated on narrow screens placed below on mobile; for wide screens layout covers it -->
+    <aside class="sidebar" aria-hidden="true" style="display:none"></aside>
+
+  </div> <!-- layout -->
+
+</div> <!-- site -->
+
+<!-- Video modal -->
+<div id="videoModal" style="display:none;position:fixed;inset:0;background:rgba(4,10,20,0.6);z-index:9999;align-items:center;justify-content:center;">
+  <div style="width:90%;max-width:900px;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.6)">
+    <div style="position:relative;padding-top:56.25%">
+      <iframe id="previewFrame" src="" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;width:100%;height:100%"></iframe>
+    </div>
+    <button id="closePreview" style="position:absolute;right:10px;top:10px;background:rgba(255,255,255,0.12);border:none;color:white;padding:8px 10px;border-radius:6px;cursor:pointer">Close</button>
+  </div>
+</div>
+
+<script src="interviewtips.js"></script>
+</body>
+</html>

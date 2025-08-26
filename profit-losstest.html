@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profit & Loss Test</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #1e1e2f, #2f2f3f, #3b3b4f);
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .question-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .options button {
+      padding: 10px;
+      background: #444;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .options button:hover {
+      background: #666;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      background: green;
+      color: white;
+    }
+
+    .nav-btn {
+      background: #007bff;
+      color: white;
+    }
+
+    .timer {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+
+    .question-numbers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 15px;
+      justify-content: center;
+    }
+
+    .question-numbers div {
+      width: 30px;
+      height: 30px;
+      background: gray;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .question-numbers .answered {
+      background: green;
+    }
+
+    .result-box {
+      background: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+
+    .result-box h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="quiz-container">
+    <div class="timer" id="timer">Time Left: 60s</div>
+    <div class="question-box">
+      <div id="question">Loading...</div>
+      <div class="options" id="options"></div>
+    </div>
+    <div class="controls">
+      <button class="nav-btn" onclick="prevQuestion()">Back</button>
+      <button class="submit-btn" onclick="submitQuiz()">Submit</button>
+      <button class="nav-btn" onclick="nextQuestion()">Next</button>
+    </div>
+    <div class="question-numbers" id="questionNumbers"></div>
+  </div>
+
+  <div class="container" id="result-container" style="display:none;">
+    <div class="result-box" id="result"></div>
+  </div>
+
+  <script src="profit-losstest.js"></script>
+</body>
+</html>

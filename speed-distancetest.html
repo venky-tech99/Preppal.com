@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Speed & Distance Test</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, gold, silver);
+    color: #000;
+  }
+  header {
+    background-color: #444;
+    color: gold;
+    text-align: center;
+    padding: 15px;
+    font-size: 2rem;
+  }
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fffbea;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .question {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .options label {
+    display: block;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .options input {
+    margin-right: 10px;
+  }
+  .options label:hover {
+    background-color: #ddd;
+  }
+  .timer {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: right;
+    color: red;
+  }
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .nav-buttons button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: gold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .nav-buttons button:hover {
+    background-color: #ffcc00;
+  }
+  .question-indicators {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 5px;
+  }
+  .indicator {
+    width: 30px;
+    height: 30px;
+    background-color: lightgreen;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .indicator.active {
+    background-color: orange;
+  }
+  .result {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  .wrong {
+    color: red;
+    margin-top: 5px;
+  }
+</style>
+</head>
+<body>
+
+<header>Speed & Distance Test</header>
+
+<div class="container">
+  <div>
+    <div class="timer" id="timer">Time left: 60s</div>
+    <div class="question" id="question">Loading question...</div>
+    <div class="options" id="options"></div>
+    <div class="question-indicators" id="indicators"></div>
+  </div>
+
+  <div class="nav-buttons">
+    <button id="backBtn">Back</button>
+    <button id="nextBtn">Next</button>
+    <button id="submitBtn">Submit</button>
+  </div>
+
+  <div id="resultContainer" class="result" style="display:none;"></div>
+</div>
+
+<script src="speed-distancetest.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operating Systems - PrepPal</title>
+<style>
+    /* Background Animation */
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #ff5f6d, #ffc371, #6a82fb, #00c6ff);
+        background-size: 400% 400%;
+        animation: gradientBG 14s ease infinite;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    header {
+        background: rgba(0, 0, 0, 0.65);
+        padding: 20px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border-bottom: 3px solid #fff;
+        animation: fadeInDown 1s ease;
+    }
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 25px;
+    }
+    h2 {
+        color: #ffeaa7;
+        border-left: 5px solid #fff;
+        padding-left: 10px;
+        animation: fadeInLeft 1s ease;
+    }
+    p, ul {
+        line-height: 1.7;
+        font-size: 16px;
+        animation: fadeInUp 1s ease;
+    }
+    .example {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 12px;
+        border-radius: 8px;
+        margin: 10px 0;
+        font-style: italic;
+        animation: fadeIn 1s ease;
+    }
+    .tip {
+        background: rgba(0,0,0,0.5);
+        border-left: 5px solid #00ffae;
+        padding: 10px;
+        margin: 12px 0;
+        border-radius: 6px;
+        font-size: 15px;
+        animation: fadeIn 1s ease;
+    }
+    .btn-container {
+        text-align: center;
+        margin-top: 35px;
+    }
+    button {
+        background: #fff;
+        color: #000;
+        padding: 12px 25px;
+        margin: 10px;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    button:hover {
+        background: #ff7675;
+        color: #fff;
+        transform: scale(1.05);
+    }
+    /* Animations */
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @keyframes fadeInUp { from {transform:translateY(20px);opacity:0;} to {transform:translateY(0);opacity:1;} }
+    @keyframes fadeInLeft { from {transform:translateX(-20px);opacity:0;} to {transform:translateX(0);opacity:1;} }
+    @keyframes fadeInDown { from {transform:translateY(-20px);opacity:0;} to {transform:translateY(0);opacity:1;} }
+</style>
+</head>
+<body>
+
+<header>Operating Systems - Placement Guide</header>
+
+<div class="container">
+
+    <h2>1. Introduction to Operating Systems</h2>
+    <p>An <b>Operating System (OS)</b> is the core software that manages computer hardware, software resources, and provides services for programs. It acts as a <b>bridge between the user and the hardware</b>.</p>
+    <div class="example">Examples: Windows, Linux, macOS, Android, iOS.</div>
+    <div class="tip">💡 Interview Tip: Be ready to explain the difference between <b>system software</b> and <b>application software</b> with examples.</div>
+
+    <h2>2. Functions of an OS</h2>
+    <ul>
+        <li><b>Process Management</b> – Creates, schedules, and terminates processes.</li>
+        <li><b>Memory Management</b> – Allocates and frees memory space as needed.</li>
+        <li><b>File System Management</b> – Controls how data is stored, named, and accessed.</li>
+        <li><b>Device Management</b> – Manages communication between hardware and software.</li>
+        <li><b>Security & Access Control</b> – Protects data and system integrity.</li>
+    </ul>
+    <div class="example">Example: When you open Google Chrome, the OS schedules CPU time, allocates memory, and provides network access.</div>
+
+    <h2>3. Types of Operating Systems</h2>
+    <ul>
+        <li><b>Batch OS</b> – Executes jobs without user interaction.</li>
+        <li><b>Time-Sharing OS</b> – Multiple users work simultaneously (Unix, Linux).</li>
+        <li><b>Distributed OS</b> – Connects multiple computers (cluster computing).</li>
+        <li><b>Real-Time OS</b> – Instant response for critical systems (Robotics, Flight Control).</li>
+        <li><b>Mobile OS</b> – Optimized for smartphones (Android, iOS).</li>
+    </ul>
+
+    <h2>4. Process Management</h2>
+    <p>Processes are <b>active programs</b>. The OS ensures fair CPU allocation using <b>schedulers</b> (FCFS, Round Robin, Priority Scheduling).</p>
+    <div class="tip">💡 Interview Tip: Draw a <b>Gantt chart</b> when explaining scheduling algorithms.</div>
+
+    <h2>5. Memory Management</h2>
+    <p>OS manages RAM using techniques like <b>paging</b>, <b>segmentation</b>, and <b>virtual memory</b>.</p>
+    <div class="example">Example: When RAM is full, OS uses the hard disk as "virtual RAM" (swap space).</div>
+
+    <h2>6. File Systems</h2>
+    <p>The OS organizes files into directories, manages permissions, and controls access rights.</p>
+    <div class="example">Examples: NTFS (Windows), ext4 (Linux), APFS (macOS).</div>
+
+    <h2>7. OS Architecture Diagram</h2>
+    <div class="example">
+        <b>User</b> → Applications → Operating System (Kernel + Shell) → Hardware
+    </div>
+
+    <h2>8. Common OS Interview Questions</h2>
+    <ul>
+        <li>What is the difference between process and thread?</li>
+        <li>Explain deadlock and its prevention techniques.</li>
+        <li>How does virtual memory work?</li>
+        <li>What are system calls? Give examples.</li>
+    </ul>
+
+    <div class="btn-container">
+        <button onclick="location.href='technicalmcqs.html'">⬅ Back</button>
+        <button onclick="location.href='ostest.html'">Take OS Test ➡</button>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Database Test</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, orange, white, blue);
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        color: navy;
+    }
+    .question-box {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px gray;
+        margin-bottom: 20px;
+    }
+    .options label {
+        display: block;
+        padding: 8px;
+        background: #f1f1f1;
+        border-radius: 5px;
+        margin: 5px 0;
+        cursor: pointer;
+    }
+    .navigation {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin: 20px 0;
+    }
+    .nav-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: none;
+        background: green;
+        color: white;
+        cursor: pointer;
+    }
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .controls button {
+        padding: 10px 20px;
+        border: none;
+        background: orange;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .timer {
+        text-align: right;
+        font-weight: bold;
+        font-size: 18px;
+        color: red;
+    }
+    #result {
+        display: none;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Database MCQ Test</h1>
+    <div class="timer" id="timer">Time Left: 60s</div>
+    <div class="question-box">
+        <div id="question"></div>
+        <div class="options" id="options"></div>
+    </div>
+    <div class="navigation" id="navigation"></div>
+    <div class="controls">
+        <button onclick="prevQuestion()">Back</button>
+        <button onclick="submitTest()">Submit</button>
+        <button onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="result"></div>
+</div>
+<script src="databasetest.js"></script>
+</body>
+</html>

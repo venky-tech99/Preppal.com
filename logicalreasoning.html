@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logical Reasoning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #fce205, #0096FF, #000000);
+            color: #fff;
+        }
+
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            font-size: 2rem;
+            color: #fce205;
+        }
+
+        .container {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .topic {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .topic:hover {
+            transform: scale(1.05);
+            background: #0096FF;
+        }
+
+        .topic h2 {
+            margin: 0 0 10px 0;
+            color: #fce205;
+        }
+
+        .topic p {
+            margin: 0;
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>Logical Reasoning</header>
+    <div class="container">
+        <div class="topic" onclick="openModule('analogy.html')">
+            <h2>Analogy</h2>
+            <p>Identify relationships between words, numbers, or figures through logical connections.</p>
+        </div>
+
+        <div class="topic" onclick="openModule('series.html')">
+            <h2>Series Completion</h2>
+            <p>Learn to identify patterns and complete number or letter sequences accurately.</p>
+        </div>
+
+        <div class="topic" onclick="openModule('blood-relations.html')">
+            <h2>Blood Relations</h2>
+            <p>Understand family relationship problems and solve them quickly.</p>
+        </div>
+
+        <div class="topic" onclick="openModule('direction-sense.html')">
+            <h2>Direction Sense Test</h2>
+            <p>Master direction-based reasoning problems with shortcuts and diagrams.</p>
+        </div>
+    </div>
+
+    <script src="logicalreasoning.js"></script>
+</body>
+</html>
